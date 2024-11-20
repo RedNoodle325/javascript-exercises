@@ -1,22 +1,17 @@
 const sumAll = function (max, min) {
-
-  if (
-    max < 0 ||
-    min < 0 ||
-    !Number.isInteger(max) ||
-    !Number.isInteger(min)
-  ) {
+  if (max < 0 || min < 0) {
     return "ERROR";
   }
-
+  if (!Number.isInteger(max) || !Number.isInteger(min)) {
+    return "ERROR";
+  }
   if (min > max) {
-    const temp = min;
+    const temp = max;
     max = min;
     min = temp;
   }
-
-  return ((max-min+1)/ 2) * (max + min);
-
+  n = max - min + 1;
+  return (n / 2) * (max + min);
 };
 
 // Do not edit below this line
